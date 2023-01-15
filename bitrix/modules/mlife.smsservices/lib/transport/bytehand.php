@@ -4,8 +4,7 @@ namespace Mlife\Smsservices\Transport;
 class Bytehand{
 	
 	private $config;
-	
-	//конструктор, получаем данные доступа к шлюзу
+
 	function __construct($params) {
 		$this->config = $this->getConfig($params);
 	}
@@ -172,7 +171,7 @@ class Bytehand{
 	}
 	
 	/**
-	 * получаем данные доступа к шлюзу из настроек модуля
+	 * пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
 	 */
 	private function getConfig($params) {
 		
