@@ -1,21 +1,21 @@
 {
-  "name": "awz.ydelivery",
-  "version": "1.0.27",
-  "description": "Интеграция с логистической платформой Яндекс Доставка для Cms Bitrix",
+  "name": "mlife.smsservices",
+  "version": "2.1.1",
+  "description": "Модуль отправки смс для Cms Bitrix",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/zahalski/awz.ydelivery.git"
+    "url": "git+https://github.com/zahalski/mlife.smsservices.git"
   },
   "author": "Andrew Zahalski",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/zahalski/awz.ydelivery/issues"
+    "url": "https://github.com/zahalski/mlife.smsservices/issues"
   },
-  "homepage": "https://github.com/zahalski/awz.ydelivery#readme",
+  "homepage": "https://github.com/zahalski/mlife.smsservices#readme",
   "devDependencies": {
     "gulp": "^4.0.2"
   },
