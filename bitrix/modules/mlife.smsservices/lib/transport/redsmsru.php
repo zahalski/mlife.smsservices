@@ -14,7 +14,7 @@ class Redsmsru extends \Mlife\Smsservices\Base\Transport{
 	public function _getBalance () {
     
         $url = 'https://'.$this->config->server.'/api/client/info';
-		$response = $this->httpPost($url);
+		$response = $this->httpPost($url, array());
 		if(!$response) return $this->emptyResponse();
 		
 		$responseData = json_decode($response,true);
