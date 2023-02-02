@@ -1,7 +1,7 @@
 <?php
 namespace Mlife\Smsservices\Transport;
 
-class Redsmsruviberapp extends \Mlife\Smsservices\Base\Transport{
+class Redsmsruviberapp{
 	
 	private $config;
 	private $lastHttpClient = null;
@@ -145,11 +145,11 @@ class Redsmsruviberapp extends \Mlife\Smsservices\Base\Transport{
 		
 	}
 	
-	public function httpGet($url,$data){
+	public function httpGet($url,$data=array()){
 		return $this->httpClient($data)->get($url);
 	}
 	
-	public function httpPost($url,$data){
+	public function httpPost($url,$data=array()){
 		return $this->httpClient($data)->post($url,$data);
 	}
 	
@@ -224,6 +224,42 @@ class Redsmsruviberapp extends \Mlife\Smsservices\Base\Transport{
 		return $c;
 		
 	}
+
+    public function emptyResponse(){
+        $data = new \stdClass();
+        $data->error = 'Service is not available';
+        $data->error_code = '9998';
+        return $data;
+    }
+
+    public function unknownResponse(){
+        $data = new \stdClass();
+        $data->error = 'Unknown response';
+        $data->error_code = '9999';
+        return $data;
+    }
+
+    public function siteCharsetFromUtf($mess){
+        if(toLower(SITE_CHARSET) != 'utf-8'){
+            if(is_array($mess)){
+                $mess = $GLOBALS['APPLICATION']->ConvertCharsetArray($mess, 'UTF-8', SITE_CHARSET);
+            }else{
+                $mess = $GLOBALS['APPLICATION']->ConvertCharset($mess, 'UTF-8', SITE_CHARSET);
+            }
+        }
+        return $mess;
+    }
+
+    public function siteCharsetToUtf($mess){
+        if(toLower(SITE_CHARSET) != 'utf-8'){
+            if(is_array($mess)){
+                $mess = $GLOBALS['APPLICATION']->ConvertCharsetArray($mess, SITE_CHARSET, 'UTF-8');
+            }else{
+                $mess = $GLOBALS['APPLICATION']->ConvertCharset($mess, SITE_CHARSET, 'UTF-8');
+            }
+        }
+        return $mess;
+    }
 	
 }
 ?>
