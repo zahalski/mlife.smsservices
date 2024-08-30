@@ -2,7 +2,7 @@
 //старый метод для отправки смс
 class CMlifeSmsServices {
 	
-	function __construct() {
+	public function __construct() {
 		$this->transport = new \Mlife\Smsservices\Sender();
 	}
 	
@@ -18,7 +18,7 @@ class CMlifeSmsServices {
 
 class CMlifeSmsServicesHtml {
 	
-	function getSelect($id,$options,$curValue,$refresh=false,$url=false,$optcode=false){
+	public static function getSelect($id,$options,$curValue,$refresh=false,$url=false,$optcode=false){
 		
 		$html = '<select id="'.$id.'" name="'.$id.'" ';
 		if($refresh){
