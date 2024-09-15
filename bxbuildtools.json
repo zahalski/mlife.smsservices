@@ -1,0 +1,18 @@
+{
+  "git_path": "../",
+  "module_path": "../bitrix/modules/mlife.smsservices/",
+  "updates_path": "../update/",
+  "output_path": "../dist/",
+  "readme_file": "../README.md",
+  "changelog_file": "../CHANGELOG.md",
+  "lang_prefix": ["MLIFE_SMSSERVICES_"],
+  "disabled_lang": [
+    "AWZ_PARTNER_NAME", "AWZ_PARTNER_URI", "ACCESS_DENIED",
+    "MAIN_ADMIN_MENU_DELETE", "MAIN_ADMIN_MENU_EDIT",
+    "MAIN_ADMIN_LIST_SELECTED", "MAIN_ADMIN_LIST_CHECKED",
+	"AWZ_ADMIN_LIST_GROUP_","MAIN_ADMIN_MENU_ADD","MAIN_ADMIN_MENU_LIST",
+	"admin_lib_list_all_title",
+	"admin_lib_list_show_row_count_title",
+	"admin_lib_list_yes","admin_lib_list_no"
+  ]
+}
