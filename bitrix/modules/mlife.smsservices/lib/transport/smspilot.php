@@ -38,9 +38,24 @@ class Smspilot{
 			$response = $data;
 			return $data;
 		}
-		
+        //print_r($response);
+
+        $senders = [];
 		$response = explode(PHP_EOL,$response);
-		$senders = explode(',',str_replace('senders=','',$response[8]));
+        foreach($response as $key=>$row){
+            $rowAr = explode('=',$row);
+            if(count($rowAr)==2){
+                if($rowAr[0]=='default_sender'){
+                    $senders[] = $rowAr[1];
+                }elseif($rowAr[0]=='senders'){
+                    foreach(explode(',',$rowAr[1]) as $sender){
+                        $sender = trim($sender);
+                        if($sender) $senders[] = $sender;
+                    }
+                }
+            }
+        }
+		//$senders = explode(',',str_replace('senders=','',$response[8]));
 		
 		foreach($senders as $value) {
 			$ob = new \stdClass();
